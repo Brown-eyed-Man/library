@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Person</title>
+</head>
+<body>
+<p th:text="'Full name: ' + ${person.get().getFullName()}"/>
+<p th:text="'Birth year: ' + ${person.get().getYearOfBirth()}"/>
+<p th:text="'Personal reader ID: ' + ${person.get().getId()}"/>
+<br/>
+<a th:href="@{/people}">Back to the list of readers</a>
+</body>
+</html>

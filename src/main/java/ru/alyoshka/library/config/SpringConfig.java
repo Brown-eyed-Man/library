@@ -21,7 +21,7 @@ import java.util.Objects;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("ru.alyoshka.library.config")
+@ComponentScan("ru.alyoshka.library")
 @PropertySource("classpath:database.properties")
 public class SpringConfig implements WebMvcConfigurer {
     private final ApplicationContext applicationContext;
