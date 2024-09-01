@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class Book {
+    private int id;
     @NotNull(message = "Field \"Title\" shouldn't be empty")
     @Size(min = 2, max = 70, message = "Size of the title should be between 2 and 70")
     private String title;
