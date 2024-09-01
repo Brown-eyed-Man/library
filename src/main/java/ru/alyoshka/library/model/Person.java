@@ -8,11 +8,11 @@ import jakarta.validation.constraints.Size;
 public class Person {
     private int id;
     @NotNull(message = "Field \"Name\" shouldn't be empty")
-    @Size(min = 2, max = 50)
+    @Size(min = 2, max = 50, message = "Size of the name should be between 2 and 50")
     private String name;
 
     @NotNull(message = "Field \"Surname\" shouldn't be empty")
-    @Size(min = 2, max = 50)
+    @Size(min = 2, max = 50, message = "Size of the surname should be between 2 and 50")
     private String surname;
     private String patronymic;
 
