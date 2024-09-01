@@ -7,7 +7,7 @@ public class Person {
     @NotNull(message = "Field \"Name\" shouldn't be empty")
     @Size(min = 5, max = 100, message = "Size of the name should be between 4 and 100")
     @Pattern(regexp = "([A-ZА-Я][a-zа-я]+ [A-ZА-Я][a-zа-я]+ [A-ZА-Я][a-zа-я]+|[A-ZА-Я][a-zа-я]+ [A-ZА-Я][a-zа-я]+)",
-    message = "Example: Петросян Евгений Ваганович (Отчество указывать при наличии)")
+    message = "Example: Петросян Евгений Ваганович (отчество указывать при наличии)")
     private String fullName;
 
     @Min(value = 1930, message = "Birth year should be above 1930")
