@@ -19,13 +19,13 @@ public class PersonDAO {
     }
 
     public List<Person> index() {
-        return jdbcTemplate.query("SELECT * FROM Person",
+        return jdbcTemplate.query("SELECT * FROM Person ORDER BY id",
                 new BeanPropertyRowMapper<>(Person.class));
     }
 
-    public Optional<Person> show(int id) {
+    public Person show(int id) {
         return jdbcTemplate.query("SELECT * FROM Person WHERE id=?", new Object[]{id},
-                new BeanPropertyRowMapper<>(Person.class)).stream().findAny();
+                new BeanPropertyRowMapper<>(Person.class)).stream().findAny().orElse(null);
     }
 
     public Optional<Person> show(String fullName) {
@@ -36,5 +36,10 @@ public class PersonDAO {
     public void save(Person newPerson) {
         jdbcTemplate.update("INSERT INTO Person(fullname, yearofbirth) VALUES(?,?)",
                 newPerson.getFullName(), newPerson.getYearOfBirth());
+    }
+
+    public void update(int id, Person updatedPerson) {
+        jdbcTemplate.update("UPDATE Person SET fullname=?, yearofbirth=? WHERE id=?",
+                updatedPerson.getFullName(), updatedPerson.getYearOfBirth(), id);;
     }
 }

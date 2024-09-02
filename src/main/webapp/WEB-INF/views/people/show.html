@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Person</title>
+    <meta charset="UTF-8">
+    <title>Person</title>
 </head>
 <body>
-<p th:text="'Full name: ' + ${person.get().getFullName()}"/>
-<p th:text="'Birth year: ' + ${person.get().getYearOfBirth()}"/>
-<p th:text="'Personal reader ID: ' + ${person.get().getId()}"/>
+<p th:text="'Full name: ' + ${person.getFullName()}"/>
+<p th:text="'Birth year: ' + ${person.getYearOfBirth()}"/>
+<p th:text="'Personal reader ID: ' + ${person.getId()}"/>
+<a th:href="@{/people/{id}/edit (id = ${person.getId()})}">Edit</a>
 <br/>
-<a th:href="@{/people}">Back to the list of readers</a>
+<a th:href="@{/people}">Back to the Main list</a>
 </body>
 </html>
